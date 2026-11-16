@@ -1,0 +1,8 @@
+{
+  "allowed_tools": ["search_kb", "create_ticket", "get_account", "refund_order"],
+  "gates": {"min_task_success": 1.0, "max_disallowed_calls": 0, "max_unlogged_calls": 0, "max_permanent_retries": 0},
+  "cases": [
+    {"id": "refund-flow", "task": "Refund order 4412 for account A9 and log a ticket.", "gold_effects": ["refund_order:4412", "create_ticket"], "flaky_tools": {"refund_order": 1}},
+    {"id": "locked-account", "task": "Look up account B2 and explain why the refund for order 9901 was denied.", "gold_effects": ["get_account:B2", "search_kb"], "flaky_tools": {}}
+  ]
+}
